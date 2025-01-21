@@ -62,6 +62,7 @@ export async function downloadLiveStream(
      
     console.info(`\n❗ Ctrl+C to stop downloading and exit\n`)
 
+    console.info(`\n✅ Downloading livestream ${title} to ./${ffmpegCommand}`)
     shell.exec(ffmpegCommand, { async: true })
   } catch (error) {
     throw new Error(`❌ Error: ${error}`).stack
