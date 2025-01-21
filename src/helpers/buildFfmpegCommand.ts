@@ -13,11 +13,11 @@ export default function buildFfmpegCommand(
   isFlv: boolean
 ): string {
   if (isFlv && format === 'live') {
-    return ffmpegCommandLive(url, title, username)
+    return ffmpegCommandLive(url,  username)
   }
   
   if (format === 'live') {
-    return ffmpegCommandLive(url, title, username) // Gunakan ffmpegCommandLive
+    return ffmpegCommandLive(url,  username) // Gunakan ffmpegCommandLive
   }
 
   
