@@ -22,7 +22,7 @@ export async function downloadLiveStream(
     throw new Error(`❌ The username is empty!`).message
   }
 
-  const acceptedFormats: string[] = ['mp4', 'mkv']
+  const acceptedFormats: string[] = ['mp4', 'mkv','live']
 
   if (!acceptedFormats.includes(format)) {
     throw new Error(
