@@ -42,7 +42,7 @@ export async function downloadLiveStream(
     ])
 
     
-    console.info(`\n✅ Downloading livestream ${title} to ./${liveUrl}`)
+    console.info(`\n✅ Downloading livestream to ./${liveUrl}`)
     
     const { url, title, isFlv }: StreamData = streamData
 
