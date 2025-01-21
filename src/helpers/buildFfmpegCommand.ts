@@ -2,6 +2,7 @@ import {
   fileNameOutput,
   ffmpegCommandMP4,
   ffmpegCommandMKV,
+  ffmpegCommandLive,
 } from '../utils/constants'
 
 export default function buildFfmpegCommand(
