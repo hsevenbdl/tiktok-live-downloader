@@ -12,6 +12,15 @@ export default function buildFfmpegCommand(
   format: string,
   isFlv: boolean
 ): string {
+  if (isFlv && format === 'live') {
+    return ffmpegCommandLive(url, title, username)
+  }
+  
+  if (format === 'live') {
+    return ffmpegCommandLive(url, title, username) // Gunakan ffmpegCommandLive
+  }
+
+  
   if (isFlv) {
     const newFileName: string = fileNameOutput(fileName, username, 'mkv')
     return ffmpegCommandMKV(url, newFileName)
