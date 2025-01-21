@@ -61,7 +61,10 @@ export const fileNameOutput = (
   if (output.endsWith('.mp4') || output.endsWith('.mkv')) {
     return output
   }
-
+if (format.endsWith('live') || format.endsWith('live')) {
+    return output
+  }
+  
   const sanitizedOutput: string = output.endsWith('/')
     ? output.slice(0, -1)
     : output
