@@ -103,7 +103,7 @@ export const ffmpegCommandMKV = (liveUrl: string, fileName: string): string => {
   return `ffmpeg -i "${liveUrl}" -c:v hevc -crf 23 -c:a copy "${fileName}" -n -stats -hide_banner -loglevel error`
 }
 
-export const ffmpeglive = (liveUrl: string, fileName: string): string => {
+export const ffmpegCommandLive = (liveUrl: string, fileName: string): string => {
  return `ffmpeg -re -stream_loop -1 -i "${liveUrl}" -c:v libx264 -preset veryfast -maxrate 1000k -bufsize 2000k -pix_fmt yuv420p -c:a aac -b:a 128k -f flv "${fileName}" -loglevel error > /dev/null 2>&1 &`
 
 }
