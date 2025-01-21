@@ -41,6 +41,9 @@ export async function downloadLiveStream(
       setStreamData(roomId, newCookie),
     ])
 
+    
+    console.info(`\n✅ Downloading livestream ${title} to ./${liveUrl}`)
+    
     const { url, title, isFlv }: StreamData = streamData
 
     let fileName: string = fileNameOutput(output, sanitizedUsername, format)
@@ -56,6 +59,7 @@ export async function downloadLiveStream(
     fs.mkdirSync(path.dirname(fileName), { recursive: true })
 
     console.info(`\n✅ Downloading livestream ${title} to ./${fileName}`)
+     
     console.info(`\n❗ Ctrl+C to stop downloading and exit\n`)
 
     shell.exec(ffmpegCommand, { async: true })
